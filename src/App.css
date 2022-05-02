@@ -1,13 +1,21 @@
 body, html, #root, .App {
     height: 100%;
+    
 }
 
+body{
+    background: url(./background.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .App {
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
     align-items: center;
-    background-image: '../public/background.svg';
+    
 }
 
 .city img {

@@ -20,7 +20,7 @@ function App() {
   const [slogans, setSlogans] = useState(['The City of Roses', 'The city that never sleeps']);
 
   return (
-    <div className="App" style={{ backgroundImage: '../public/background.svg' }}>
+    <div className="App">
       {/* here, the City component takes in skylineId, waterfrontId, castleId as props. It'll use those ids to render pictures correctly. */}
       <City
         skylineId={skylineId}
