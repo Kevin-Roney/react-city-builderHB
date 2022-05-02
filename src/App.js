@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import SkylineDropdown from './SkylineDropdown';
-import WaterfrontDropdown from './WaterfrontDropdown';
-import CastleDropdown from './CastleDropdown';
+import Dropdown from './Dropdown';
 import SloganList from './SloganList';
 import SloganForm from './SloganForm';
 import CityNameInput from './CityNameInput';
@@ -17,8 +15,17 @@ function App() {
   // you'll need to track a city name, which starts as the city name of your choice.
   const [cityName, setCityName] = useState('');
   // finally, you'll need an array of slogans, which could start out as ['The City of Excellence'] for example
-  const [slogans, setSlogans] = useState(['The City of Roses', 'The city that never sleeps']);
+  const [slogans, setSlogans] = useState(['The City of Roses']);
+  const [sloganInput, setSloganInput] = useState('');
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    // This component takes in a prop called setSlogans, which is a function that takes in an array of slogans. 
+    // Also, this component also takes in a prop called slogans, which is an array of strings. //// On submit call the setSlogans state with a new array that is a copy of the old array with the new slogan immutably added to the end 
+    setSlogans([...slogans, sloganInput]);
+    // set the sloganInput form state to an empty string to reset the form
+    setSloganInput('');
+  }
   return (
     <div className="App">
       {/* here, the City component takes in skylineId, waterfrontId, castleId as props. It'll use those ids to render pictures correctly. */}
@@ -41,20 +48,18 @@ function App() {
           render all three Dropdown components (WaterfrontDropdown, SkylineDropdown, CastleDropdown) here. 
           In each Dropdown, pass as props the state handler functions defined above, so that these child components can manipulate parent state 
           */}
-          <SkylineDropdown 
+          <Dropdown
             setSkylineId={setSkylineId}
-          />
-          <WaterfrontDropdown 
             setWaterfrontId={setWaterfrontId}
-          />
-          <CastleDropdown 
-            setCastleId={setCastleId}
-          />
+            setCastleId={setCastleId} />
         </section>
         {/* here, the SloganForm component takes in the setSlogans state handler function and the slogans array that live in state */}
         <SloganForm 
           setSlogans={setSlogans}
           slogans={slogans}
+          setSloganInput={setSloganInput}
+          sloganInput={sloganInput}
+          handleSubmit={handleSubmit}
         />
         {/* here, the SloganList component takes the array of slogans that lives in state */}
         <SloganList 
