@@ -17,6 +17,7 @@ function App() {
   // you'll need to track a city name, which starts as the city name of your choice.
   const [cityName, setCityName] = useState('');
   // finally, you'll need an array of slogans, which could start out as ['The City of Excellence'] for example
+  const [sloganInput, setSloganInput] = useState('');
   const [slogans, setSlogans] = useState(['The City of Roses', 'The city that never sleeps']);
 
   return (
