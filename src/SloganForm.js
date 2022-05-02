@@ -10,7 +10,7 @@ export default function SloganForm({ slogans, setSlogans }) {
 
     // This component takes in a prop called setSlogans, which is a function that takes in an array of slogans. 
     // Also, this component also takes in a prop called slogans, which is an array of strings. //// On submit call the setSlogans state with a new array that is a copy of the old array with the new slogan immutably added to the end 
-    setSlogans([...slogans, setSloganInput]);
+    setSlogans([...slogans, sloganInput]);
     // set the sloganInput form state to an empty string to reset the form
     setSloganInput('');
   }

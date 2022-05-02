@@ -1,5 +1,5 @@
 import React from 'react';
-import Slogan from './Slogan';
+import Slogan from './Slogan.js';
 
 export default function SloganList({ slogans }) {
   return (
