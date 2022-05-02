@@ -6,9 +6,9 @@ export default function Dropdown({ setCastleId, setSkylineId, setWaterfrontId })
       <div className='castle'>
       Select a Castle
         <select onChange={(e) => setCastleId(e.target.value)}>
-          <option value="1">Serious</option>
-          <option value="2">Mysterious</option>
-          <option value="3">Regal</option>
+          <option value={1}>Serious</option>
+          <option value={2}>Mysterious</option>
+          <option value={3}>Regal</option>
         </select>
       </div>
       <div className='skyline'>

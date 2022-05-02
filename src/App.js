@@ -26,6 +26,7 @@ function App() {
     // set the sloganInput form state to an empty string to reset the form
     setSloganInput('');
   }
+  
   return (
     <div className="App">
       {/* here, the City component takes in skylineId, waterfrontId, castleId as props. It'll use those ids to render pictures correctly. */}
